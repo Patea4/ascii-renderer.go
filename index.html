@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upload Image for ASCII Art</title>
+  <style>
+    #container {
+      display: flex;
+    }
+
+    #ascii-art {
+      font-family: monospace;
+      white-space: pre;
+      font-size: 1px;
+      text-align: center;
+    }
+
+    #ascii-art span {
+      line-height: 1;
+      text-align: center;
+      width: 1ch;
+      height: 1em;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Upload Image for ASCII Art</h1>
+  <form id="upload-form" enctype="multipart/form-data">
+    <input type="file" name="image" id="image" accept="image/*"><br><br>
+    <button type="submit">Convert to ASCII</button>
+    <div class="slider-container">
+      <label for="width-slider">Width:</label>
+      <input type="range" id="width-slider" min="200" max="2000" value="800">
+      <span id="slider-value">800</span>px
+    </div>
+  </form>
+  <br>
+  <div id="container">
+    <p id="ascii-art"></p>
+  </div>
+
+  <script src="/static/ascii.js"></script>
+</body>
+
+</html>
